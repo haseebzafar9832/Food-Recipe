@@ -21,10 +21,6 @@ class ProductGalleryitems extends StatelessWidget {
                     color: products.color,
                     blurRadius: 5.0, // soften the shadow
                     spreadRadius: 0, //extend the shadow
-                    // offset: Offset(
-                    //   15.0, // Move to right 10  horizontally
-                    //   15.0, // Move to bottom 10 Vertically
-                    // ),
                   )
                 ],
                 gradient: LinearGradient(
@@ -46,6 +42,7 @@ class ProductGalleryitems extends StatelessWidget {
                       child: Expanded(
                         child: InkWell(
                           onTap: () {
+                            print(products.id);
                             Navigator.of(context).pushNamed(
                                 ProductDetail.routeName,
                                 arguments: products.id);

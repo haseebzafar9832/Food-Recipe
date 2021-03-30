@@ -6,52 +6,52 @@ class ProductProvider with ChangeNotifier {
   List<Product> _items = [
     Product(
         id: 'c1',
-        title: 'Italian',
+        title: 'BBQ and Grilling',
         color: Colors.yellow[200],
         imageUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1idRghq-NsNSzRZrIQ0MGG7KY-ChCtoqgQ&usqp=CAU"),
+            "https://cdn.pixabay.com/photo/2016/08/04/11/56/smoke-1568953_960_720.jpg"),
     Product(
         id: 'c2',
-        title: 'Quick & Easy',
+        title: 'Casseroles',
         color: Colors.blue[100],
         imageUrl:
-            "https://image.shutterstock.com/image-photo/haleem-spices-herbs-600w-1488278681.jpg"),
+            "https://cdn.pixabay.com/photo/2018/10/25/09/08/menemen-3771970__340.jpg"),
     Product(
         id: 'c3',
-        title: 'Hamburgers',
+        title: 'Meats',
         color: Colors.pink[200],
         imageUrl:
-            "https://cookwithreena.files.wordpress.com/2019/11/img_20191122_134557_bokehedtwtr.jpg?w=1024"),
+            "https://cdn.pixabay.com/photo/2017/11/24/17/25/steak-2975323__340.jpg"),
     Product(
         id: 'c4',
-        title: 'German',
+        title: 'Pasta',
         color: Colors.blue[200],
         imageUrl:
-            "https://simplyvegetarian777.com/wp-content/uploads/2016/04/image-16-1024x768.png"),
+            "https://cdn.pixabay.com/photo/2016/04/02/15/13/noodle-1303003__340.jpg"),
     Product(
         id: 'c5',
-        title: 'Light & Lovely',
+        title: 'Pizza',
         color: Colors.purple[100],
         imageUrl:
-            "https://mydaintykitchen.com/wp-content/uploads/2019/04/20190415_142131-1024x768.jpg"),
+            "https://cdn.pixabay.com/photo/2018/04/11/03/13/food-3309418__340.jpg"),
     Product(
         id: 'c6',
-        title: 'Exotic',
+        title: 'Rice and Beans',
         color: Colors.green[100],
         imageUrl:
-            "https://data.whicdn.com/images/349131763/original.jpg?t=1601400485"),
+            "https://cdn.pixabay.com/photo/2016/04/17/03/53/food-1334158__340.jpg"),
     Product(
         id: 'c7',
-        title: 'Breakfast',
+        title: 'Salads',
         color: Colors.lightBlue[100],
         imageUrl:
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKFvrNZxrpgAhlnwIcv6UpHjX3hbONSnH6EQ&usqp=CAU"),
+            "https://cdn.pixabay.com/photo/2016/09/15/19/24/salad-1672505__340.jpg"),
     Product(
         id: 'c8',
-        title: 'Asian',
+        title: 'Soups',
         color: Colors.lightGreen[100],
         imageUrl:
-            "https://media.cntraveller.in/wp-content/uploads/2020/06/Arbi-leaves-1366x768.jpg"),
+            "https://cdn.pixabay.com/photo/2021/02/27/10/05/goulash-6054124__340.jpg"),
     Product(
         id: 'c9',
         title: 'French',
@@ -60,6 +60,66 @@ class ProductProvider with ChangeNotifier {
             "https://www.cuocicuoci.com/wp-content/uploads/2020/08/zuppa-fredda.jpg"),
     Product(
         id: 'c10',
+        title: 'Stir-Fry',
+        color: Colors.teal[100],
+        imageUrl:
+            "https://cdn.pixabay.com/photo/2015/02/11/10/16/sunny-side-up-632217__340.jpg"),
+    Product(
+        id: 'c11',
+        title: 'Italian',
+        color: Colors.yellow[200],
+        imageUrl:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1idRghq-NsNSzRZrIQ0MGG7KY-ChCtoqgQ&usqp=CAU"),
+    Product(
+        id: 'c12',
+        title: 'Quick & Easy',
+        color: Colors.blue[100],
+        imageUrl:
+            "https://image.shutterstock.com/image-photo/haleem-spices-herbs-600w-1488278681.jpg"),
+    Product(
+        id: 'c13',
+        title: 'Hamburgers',
+        color: Colors.pink[200],
+        imageUrl:
+            "https://cookwithreena.files.wordpress.com/2019/11/img_20191122_134557_bokehedtwtr.jpg?w=1024"),
+    Product(
+        id: 'c14',
+        title: 'German',
+        color: Colors.blue[200],
+        imageUrl:
+            "https://simplyvegetarian777.com/wp-content/uploads/2016/04/image-16-1024x768.png"),
+    Product(
+        id: 'c15',
+        title: 'Light & Lovely',
+        color: Colors.purple[100],
+        imageUrl:
+            "https://mydaintykitchen.com/wp-content/uploads/2019/04/20190415_142131-1024x768.jpg"),
+    Product(
+        id: 'c16',
+        title: 'Exotic',
+        color: Colors.green[100],
+        imageUrl:
+            "https://data.whicdn.com/images/349131763/original.jpg?t=1601400485"),
+    Product(
+        id: 'c17',
+        title: 'Breakfast',
+        color: Colors.lightBlue[100],
+        imageUrl:
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTKFvrNZxrpgAhlnwIcv6UpHjX3hbONSnH6EQ&usqp=CAU"),
+    Product(
+        id: 'c18',
+        title: 'Asian',
+        color: Colors.lightGreen[100],
+        imageUrl:
+            "https://media.cntraveller.in/wp-content/uploads/2020/06/Arbi-leaves-1366x768.jpg"),
+    Product(
+        id: 'c19',
+        title: 'French',
+        color: Colors.pink[100],
+        imageUrl:
+            "https://www.cuocicuoci.com/wp-content/uploads/2020/08/zuppa-fredda.jpg"),
+    Product(
+        id: 'c20',
         title: 'Summer',
         color: Colors.teal[100],
         imageUrl:

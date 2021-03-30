@@ -49,7 +49,9 @@ class _MainPageState extends State<MainPage> {
                 )
         ],
       ),
-      body: Productdetails(),
+      body: NotificationListener(
+        child: GalleryItems(),
+      ),
     );
   }
 }

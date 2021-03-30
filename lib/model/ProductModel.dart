@@ -6,4 +6,8 @@ class Product with ChangeNotifier {
   final Color color;
   final String imageUrl;
   Product({this.id, this.title, this.color, this.imageUrl});
+  @override
+  void notifyListeners() {
+    notifyListeners();
+  }
 }

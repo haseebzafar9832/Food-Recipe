@@ -3,12 +3,12 @@ import 'package:flutter_application_1/provider/productprovider.dart';
 import 'package:flutter_application_1/widget/productitems.dart';
 import 'package:provider/provider.dart';
 
-class Productdetails extends StatefulWidget {
+class GalleryItems extends StatefulWidget {
   @override
   _ProductdetailsState createState() => _ProductdetailsState();
 }
 
-class _ProductdetailsState extends State<Productdetails> {
+class _ProductdetailsState extends State<GalleryItems> {
   final products = 3;
 
   final List a = ["ali", "sf"];

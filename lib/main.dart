@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/Screens/Gallery%20Items.dart';
 import 'package:flutter_application_1/Screens/Productdetail.dart';
+import 'package:flutter_application_1/provider/mealmodel.dart';
 import 'package:flutter_application_1/provider/productprovider.dart';
 import 'package:provider/provider.dart';
 
@@ -13,8 +13,15 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider(
-      create: (_) => ProductProvider(),
+    return MultiProvider(
+      providers: [
+        ChangeNotifierProvider.value(
+          value: ProductProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: MealProvider(),
+        )
+      ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         title: 'Food Gallery',
@@ -23,7 +30,9 @@ class MyApp extends StatelessWidget {
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
         home: MainPage(),
-        routes: {ProductDetail.routeName: (_) => ProductDetail()},
+        routes: {
+          ProductDetail.routeName: (_) => ProductDetail(),
+        },
       ),
     );
   }
