@@ -1,12 +1,14 @@
-import '../model/model.dart';
+import 'package:flutter_application_1/model/moredetailmodel.dart';
+
 import 'package:flutter/cupertino.dart';
 
-class MealProvider with ChangeNotifier {
-  List<Meal> _items = [
-    Meal(
+class MealdetailProvider with ChangeNotifier {
+  List<DetailMeal> _items2 = [
+    DetailMeal(
       id: 'm1',
       categories: [
         'c1',
+        'c2',
       ],
       title: 'Spaghetti with Sauce',
       affordability: Affordability.Affordable,
@@ -36,7 +38,7 @@ class MealProvider with ChangeNotifier {
       isVegetarian: true,
       isLactoseFree: true,
     ),
-    Meal(
+    DetailMeal(
       id: 'm2',
       categories: [
         'c2',
@@ -64,7 +66,7 @@ class MealProvider with ChangeNotifier {
       isVegetarian: false,
       isLactoseFree: false,
     ),
-    Meal(
+    DetailMeal(
       id: 'm3',
       categories: [
         'c2',
@@ -96,7 +98,7 @@ class MealProvider with ChangeNotifier {
       isVegetarian: false,
       isLactoseFree: true,
     ),
-    Meal(
+    DetailMeal(
       id: 'm4',
       categories: [
         'c4',
@@ -131,7 +133,7 @@ class MealProvider with ChangeNotifier {
       isVegetarian: false,
       isLactoseFree: false,
     ),
-    Meal(
+    DetailMeal(
       id: 'm5',
       categories: [
         'c2'
@@ -167,7 +169,7 @@ class MealProvider with ChangeNotifier {
       isVegetarian: true,
       isLactoseFree: true,
     ),
-    Meal(
+    DetailMeal(
       id: 'm6',
       categories: [
         'c6',
@@ -203,7 +205,7 @@ class MealProvider with ChangeNotifier {
       isVegetarian: true,
       isLactoseFree: false,
     ),
-    Meal(
+    DetailMeal(
       id: 'm7',
       categories: [
         'c7',
@@ -234,7 +236,7 @@ class MealProvider with ChangeNotifier {
       isVegetarian: true,
       isLactoseFree: false,
     ),
-    Meal(
+    DetailMeal(
       id: 'm8',
       categories: [
         'c8',
@@ -267,7 +269,7 @@ class MealProvider with ChangeNotifier {
       isVegetarian: false,
       isLactoseFree: true,
     ),
-    Meal(
+    DetailMeal(
       id: 'm9',
       categories: [
         'c9',
@@ -316,7 +318,7 @@ class MealProvider with ChangeNotifier {
       isVegetarian: true,
       isLactoseFree: false,
     ),
-    Meal(
+    DetailMeal(
       id: 'm10',
       categories: [
         'c2',
@@ -351,8 +353,8 @@ class MealProvider with ChangeNotifier {
       isLactoseFree: true,
     ),
   ];
-  List<Meal> get item1 {
-    return [..._items];
+  List<DetailMeal> get item1 {
+    return [..._items2];
   }
 
   void addValue() {
@@ -360,7 +362,7 @@ class MealProvider with ChangeNotifier {
     notifyListeners();
   }
 
-  List<Meal> findViewById(String id) {
-    return item1.where((element) => element.categories.contains(id)).toList();
+  DetailMeal findViewById(String id) {
+    return _items2.firstWhere((products) => products.id == id);
   }
 }

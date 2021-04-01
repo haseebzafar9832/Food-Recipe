@@ -1,102 +1,135 @@
 import 'package:flutter/material.dart';
-import 'package:simple_rich_text/simple_rich_text.dart';
+import 'package:flutter_application_1/provider/moredetailpro.dart';
+import 'package:provider/provider.dart';
 
-class MyHomePage extends StatelessWidget {
+class MoreDetail extends StatelessWidget {
+  static const RouteName = '/mealdetail';
   @override
   Widget build(BuildContext context) {
-    String text = 'Click *Food';
+    final productId = ModalRoute.of(context).settings.arguments as String;
+    final productDetail =
+        Provider.of<MealdetailProvider>(context).findViewById(productId);
     return Scaffold(
-      body: CustomScrollView(
-        slivers: <Widget>[
-          SliverAppBar(
-            backgroundColor: Color(0xFFC8E6C9),
-            brightness: Brightness.dark,
-            title: Row(
+      body: NestedScrollView(
+          headerSliverBuilder: (BuildContext context, index) {
+            return <Widget>[
+              SliverAppBar(
+                floating: false,
+                pinned: true,
+                title: Text(
+                  productDetail.title,
+                  style: TextStyle(color: Colors.black54),
+                ),
+                backgroundColor: Colors.blue[100],
+                expandedHeight: 350,
+                flexibleSpace: FlexibleSpaceBar(
+                  background: Stack(
+                    children: [
+                      Padding(
+                        padding: const EdgeInsets.only(
+                          top: 150,
+                          left: 30,
+                        ),
+                        child: Column(
+                          children: [
+                            Row(
+                              children: [
+                                IconButton(
+                                    icon: Icon(Icons.timer), onPressed: null),
+                                Title(
+                                  child: Text(productDetail.duration.toString(),
+                                      style: TextStyle(color: Colors.black54)),
+                                  color: Colors.red,
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                IconButton(
+                                    icon: Icon(Icons.category),
+                                    onPressed: null),
+                                Title(
+                                  child: Text("Spicy",
+                                      style: TextStyle(color: Colors.black54)),
+                                  color: Colors.red,
+                                )
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                IconButton(
+                                    icon: Icon(Icons.no_meals),
+                                    onPressed: null),
+                                Title(
+                                  child: Text("Simple",
+                                      style: TextStyle(color: Colors.black54)),
+                                  color: Colors.red,
+                                )
+                              ],
+                            )
+                          ],
+                        ),
+                      ),
+                      Positioned.fill(
+                        right: -70,
+                        child: Align(
+                          alignment: Alignment.centerRight,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 85),
+                            child: CircleAvatar(
+                              backgroundImage:
+                                  NetworkImage(productDetail.imageUrl),
+                              radius: 80,
+                            ),
+                          ),
+                        ),
+                      )
+                    ],
+                  ),
+                ),
+              )
+            ];
+          },
+          body: SingleChildScrollView(
+            child: Column(
               children: [
-                IconButton(icon: Icon(Icons.arrow_back), onPressed: null),
-                Padding(
-                  padding: const EdgeInsets.only(left: 220),
-                  child: IconButton(icon: Icon(Icons.home), onPressed: null),
+                buildContainer("INGREDIANTS"),
+                Container(
+                  height: 200,
+                  child: ListView.builder(
+                    itemCount: productDetail.ingredients.length,
+                    itemBuilder: (BuildContext context, index) {
+                      return Card(
+                          child: Text(
+                              productDetail.ingredients[index].toString()));
+                    },
+                  ),
+                ),
+                buildContainer("Steps"),
+                Container(
+                  height: 300,
+                  child: ListView.builder(
+                    itemCount: productDetail.steps.length,
+                    itemBuilder: (BuildContext context, index) {
+                      return Card(
+                          child: Text(productDetail.steps[index].toString()));
+                    },
+                  ),
                 ),
               ],
             ),
-            pinned: true,
-          ),
-          SliverAppBar(
-            // floating: true,
-            pinned: true,
-            title: Padding(
-              padding: const EdgeInsets.only(right: 100, bottom: 18),
-              child: SimpleRichText(
-                text: "$text ",
-                style: TextStyle(fontSize: 35),
-              ),
-            ),
+          )),
+    );
+  }
 
-            flexibleSpace: Container(),
-            bottom: PreferredSize(
-                child: Row(
-                  children: [
-                    Stack(
-                      children: [
-                        Row(
-                          children: [
-                            Container(
-                              child: IconButton(
-                                icon: Icon(Icons.ac_unit),
-                                onPressed: null,
-                              ),
-                            ),
-                            // // Container(
-                            // //   child: IconButton(
-                            // //     icon: Icon(Icons.ac_unit),
-                            // //     onPressed: null,
-                            // //   ),
-                            // ),
-                          ],
-                        ),
-                        Expanded(
-                          child: Column(
-                            children: [
-                              Container(
-                                alignment: Alignment.bottomLeft,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(150.0),
-                                  color: Colors.black12,
-                                ),
-                                height: 170,
-                                width: 170,
-                              )
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                    SliverAppBar()
-                  ],
-                ),
-                preferredSize: null),
-            backgroundColor: Color(0xFFC8E6C9),
-            // pinned: true,
-            expandedHeight: 280,
-            centerTitle: true,
-          ),
-          SliverGrid(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 4,
-            ),
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return Container(
-                  height: 100,
-                  child: Center(
-                      //child: Text("$Text"),
-                      ),
-                );
-              },
-            ),
-          ),
-        ],
+  Container buildContainer(String title) {
+    return Container(
+      child: Padding(
+        padding: const EdgeInsets.all(18.0),
+        child: Text(
+          title,
+          style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+        ),
       ),
     );
   }

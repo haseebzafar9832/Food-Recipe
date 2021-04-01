@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Screens/Moredetail.dart';
 import 'package:flutter_application_1/Screens/Productdetail.dart';
 import 'package:flutter_application_1/provider/mealmodel.dart';
+import 'package:flutter_application_1/provider/moredetailpro.dart';
 import 'package:flutter_application_1/provider/productprovider.dart';
 import 'package:provider/provider.dart';
 
@@ -20,6 +22,9 @@ class MyApp extends StatelessWidget {
         ),
         ChangeNotifierProvider.value(
           value: MealProvider(),
+        ),
+        ChangeNotifierProvider.value(
+          value: MealdetailProvider(),
         )
       ],
       child: MaterialApp(
@@ -32,6 +37,7 @@ class MyApp extends StatelessWidget {
         home: MainPage(),
         routes: {
           ProductDetail.routeName: (_) => ProductDetail(),
+          MoreDetail.RouteName: (_) => MoreDetail(),
         },
       ),
     );

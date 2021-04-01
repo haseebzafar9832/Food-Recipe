@@ -134,8 +134,4 @@ class ProductProvider with ChangeNotifier {
     // item.add(value);
     notifyListeners();
   }
-
-  Product findViewById(String id) {
-    return item.firstWhere((product) => product.id == id);
-  }
 }
