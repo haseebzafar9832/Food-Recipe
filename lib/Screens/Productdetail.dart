@@ -40,7 +40,10 @@ class _ProductDetailState extends State<ProductDetail> {
         actions: [
           isSearching
               ? IconButton(
-                  icon: Icon(Icons.cancel),
+                  icon: Icon(
+                    Icons.cancel,
+                    color: Color(0xfff54d27),
+                  ),
                   color: Colors.black,
                   onPressed: () {
                     setState(() {
@@ -49,7 +52,10 @@ class _ProductDetailState extends State<ProductDetail> {
                   },
                 )
               : IconButton(
-                  icon: Icon(Icons.search),
+                  icon: Icon(
+                    Icons.search,
+                    color: Color(0xfff54d27),
+                  ),
                   color: Colors.black,
                   onPressed: () {
                     setState(() {
@@ -59,112 +65,101 @@ class _ProductDetailState extends State<ProductDetail> {
                 )
         ],
       ),
-      body: SingleChildScrollView(
-        child: Container(
-          child: Column(
-            children: [
-              Container(
-                height: 640,
-                child: Expanded(
-                  child: ListView.builder(
-                    itemCount: productDetail.length,
-                    itemBuilder: (BuildContext context, int index) {
-                      return InkWell(
-                        onTap: () {
-                          print(productId);
-                          Navigator.of(context).pushNamed(
-                            MoreDetail.RouteName,
-                            arguments: productDetail[index].id,
-                          );
-                        },
-                        child: Card(
-                          child: Row(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: <Widget>[
-                              Padding(
-                                padding: const EdgeInsets.all(10.0),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    boxShadow: [
-                                      BoxShadow(
-                                        color: Colors.grey.withOpacity(0.3),
-                                        spreadRadius: 1,
-                                        blurRadius: 9,
-                                        offset: Offset(
-                                            0, 3), // changes position of shadow
-                                      ),
-                                    ],
-                                  ),
-                                  child: ClipRRect(
-                                    borderRadius: BorderRadius.circular(20),
-                                    child: Image.network(
-                                      productDetail[index].imageUrl,
-                                      height: 110,
-                                      width: 110,
-                                      fit: BoxFit.fill,
-                                    ),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: <Widget>[
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                        top: 25,
-                                        bottom: 0,
-                                        left: 10,
-                                      ),
-                                      child: Wrap(
-                                        alignment: WrapAlignment.start,
-                                        children: [
-                                          Text(
-                                            productDetail[index].title,
-                                            style: TextStyle(
-                                              fontSize: 17,
-                                              fontWeight: FontWeight.bold,
-                                              color: Colors.black54,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                        top: 5,
-                                        bottom: 0,
-                                        left: 10,
-                                      ),
-                                      child: Text(
-                                        "By Molly Familano",
-                                        style: TextStyle(color: Colors.black45),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.only(
-                                        top: 25,
-                                        bottom: 0,
-                                        left: 10,
-                                      ),
-                                      child: Text(
-                                        "More Detail",
-                                        style: TextStyle(color: Colors.blue),
-                                      ),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
+      body: Container(
+        child: ListView.builder(
+          itemCount: productDetail.length,
+          itemBuilder: (BuildContext context, int index) {
+            return InkWell(
+              onTap: () {
+                print(productId);
+                Navigator.of(context).pushNamed(
+                  MoreDetail.RouteName,
+                  arguments: productDetail[index].id,
+                );
+              },
+              child: Card(
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: const EdgeInsets.all(10.0),
+                      child: Container(
+                        decoration: BoxDecoration(
+                          boxShadow: [
+                            BoxShadow(
+                              color: Colors.grey.withOpacity(0.3),
+                              spreadRadius: 1,
+                              blurRadius: 9,
+                              offset:
+                                  Offset(0, 3), // changes position of shadow
+                            ),
+                          ],
+                        ),
+                        child: ClipRRect(
+                          borderRadius: BorderRadius.circular(20),
+                          child: Image.network(
+                            productDetail[index].imageUrl,
+                            height: 110,
+                            width: 110,
+                            fit: BoxFit.fill,
                           ),
                         ),
-                      );
-                    },
-                  ),
+                      ),
+                    ),
+                    Container(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: <Widget>[
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 25,
+                              bottom: 0,
+                              left: 10,
+                            ),
+                            child: Wrap(
+                              alignment: WrapAlignment.start,
+                              children: [
+                                Text(
+                                  productDetail[index].title,
+                                  style: TextStyle(
+                                    fontSize: 17,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.black54,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 5,
+                              bottom: 0,
+                              left: 10,
+                            ),
+                            child: Text(
+                              "By Molly Familano",
+                              style: TextStyle(color: Colors.black45),
+                            ),
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.only(
+                              top: 25,
+                              bottom: 0,
+                              left: 10,
+                            ),
+                            child: Text(
+                              "More Detail",
+                              style: TextStyle(color: Colors.blue),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                  ],
                 ),
               ),
-            ],
-          ),
+            );
+          },
         ),
       ),
     );

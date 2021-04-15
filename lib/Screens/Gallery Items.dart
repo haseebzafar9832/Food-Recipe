@@ -36,7 +36,7 @@ class _ProductdetailsState extends State<GalleryItems> {
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
                     image: NetworkImage(
-                      "https://upload.wikimedia.org/wikipedia/commons/3/32/Googleplex_HQ_%28cropped%29.jpg",
+                      "https://images.unsplash.com/photo-1494548162494-384bba4ab999?ixid=MXwxMjA3fDB8MHxzZWFyY2h8MXx8c3VucmlzZXxlbnwwfHwwfA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80",
                     ),
                     fit: BoxFit.cover,
                   ),
@@ -48,7 +48,7 @@ class _ProductdetailsState extends State<GalleryItems> {
                   borderRadius: BorderRadius.circular(10.0),
                   image: DecorationImage(
                     image: NetworkImage(
-                      "https://upload.wikimedia.org/wikipedia/commons/3/32/Googleplex_HQ_%28cropped%29.jpg",
+                      "https://cdn.pixabay.com/photo/2014/02/27/16/10/tree-276014__340.jpg",
                     ),
                     fit: BoxFit.cover,
                   ),

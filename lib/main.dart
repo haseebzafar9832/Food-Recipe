@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/Screens/Moredetail.dart';
 import 'package:flutter_application_1/Screens/Productdetail.dart';
+import 'package:flutter_application_1/model/ProductModel.dart';
 import 'package:flutter_application_1/provider/mealmodel.dart';
 import 'package:flutter_application_1/provider/moredetailpro.dart';
 import 'package:flutter_application_1/provider/productprovider.dart';
@@ -24,8 +25,8 @@ class MyApp extends StatelessWidget {
           value: MealProvider(),
         ),
         ChangeNotifierProvider.value(
-          value: MealdetailProvider(),
-        )
+          value: MealProvider2(),
+        ),
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,

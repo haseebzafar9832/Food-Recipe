@@ -6,28 +6,27 @@ class ProductProvider with ChangeNotifier {
   List<Product> _items = [
     Product(
         id: 'c1',
-        title: 'BBQ and Grilling',
+        title: 'BAR-B-QUE',
         color: Colors.yellow[200],
         imageUrl:
             "https://cdn.pixabay.com/photo/2016/08/04/11/56/smoke-1568953_960_720.jpg"),
     Product(
         id: 'c2',
-        title: 'Casseroles',
+        title: 'Beef Recipes',
         color: Colors.blue[100],
         imageUrl:
             "https://cdn.pixabay.com/photo/2018/10/25/09/08/menemen-3771970__340.jpg"),
     Product(
         id: 'c3',
-        title: 'Meats',
+        title: 'Chicken Recipes',
         color: Colors.pink[200],
         imageUrl:
-            "https://cdn.pixabay.com/photo/2017/11/24/17/25/steak-2975323__340.jpg"),
+            "https://static.toiimg.com/thumb/62711166.cms?resizemode=4&width=1200"),
     Product(
         id: 'c4',
         title: 'Pasta',
         color: Colors.blue[200],
-        imageUrl:
-            "https://cdn.pixabay.com/photo/2016/04/02/15/13/noodle-1303003__340.jpg"),
+        imageUrl: "https://static.toiimg.com/photo/71725165.cms"),
     Product(
         id: 'c5',
         title: 'Pizza',
@@ -54,13 +53,13 @@ class ProductProvider with ChangeNotifier {
             "https://cdn.pixabay.com/photo/2021/02/27/10/05/goulash-6054124__340.jpg"),
     Product(
         id: 'c9',
-        title: 'French',
+        title: 'Desert Recipes',
         color: Colors.pink[100],
         imageUrl:
             "https://www.cuocicuoci.com/wp-content/uploads/2020/08/zuppa-fredda.jpg"),
     Product(
         id: 'c10',
-        title: 'Stir-Fry',
+        title: 'Fish Rewipes',
         color: Colors.teal[100],
         imageUrl:
             "https://cdn.pixabay.com/photo/2015/02/11/10/16/sunny-side-up-632217__340.jpg"),
@@ -72,31 +71,31 @@ class ProductProvider with ChangeNotifier {
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTr1idRghq-NsNSzRZrIQ0MGG7KY-ChCtoqgQ&usqp=CAU"),
     Product(
         id: 'c12',
-        title: 'Quick & Easy',
+        title: 'Mutton Recipes',
         color: Colors.blue[100],
         imageUrl:
             "https://image.shutterstock.com/image-photo/haleem-spices-herbs-600w-1488278681.jpg"),
     Product(
         id: 'c13',
-        title: 'Hamburgers',
+        title: 'Vegetables Recipes',
         color: Colors.pink[200],
         imageUrl:
             "https://cookwithreena.files.wordpress.com/2019/11/img_20191122_134557_bokehedtwtr.jpg?w=1024"),
     Product(
         id: 'c14',
-        title: 'German',
+        title: 'Break Fast ',
         color: Colors.blue[200],
         imageUrl:
             "https://simplyvegetarian777.com/wp-content/uploads/2016/04/image-16-1024x768.png"),
     Product(
         id: 'c15',
-        title: 'Light & Lovely',
+        title: 'Chaat',
         color: Colors.purple[100],
         imageUrl:
             "https://mydaintykitchen.com/wp-content/uploads/2019/04/20190415_142131-1024x768.jpg"),
     Product(
         id: 'c16',
-        title: 'Exotic',
+        title: 'Soup',
         color: Colors.green[100],
         imageUrl:
             "https://data.whicdn.com/images/349131763/original.jpg?t=1601400485"),

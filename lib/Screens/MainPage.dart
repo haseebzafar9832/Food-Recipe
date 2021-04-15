@@ -19,18 +19,26 @@ class _MainPageState extends State<MainPage> {
         title: !isSearching
             ? Text(
                 "What to eat?",
-                style: TextStyle(color: Colors.black),
+                style: TextStyle(color: Color(0xfff54d27)),
                 textAlign: TextAlign.center,
               )
             : TextField(
                 decoration: InputDecoration(
-                    icon: Icon(Icons.search), hintText: "You can search here"),
+                  icon: Icon(Icons.search, color: Color(0xfff54d27)),
+                  hintText: "You can search here",
+                  hintStyle: TextStyle(
+                    color: Color(0xfff54d27),
+                  ),
+                ),
               ),
         backgroundColor: Colors.white,
         actions: [
           isSearching
               ? IconButton(
-                  icon: Icon(Icons.cancel),
+                  icon: Icon(
+                    Icons.cancel,
+                    color: Color(0xfff54d27),
+                  ),
                   color: Colors.black,
                   onPressed: () {
                     setState(() {
@@ -39,7 +47,10 @@ class _MainPageState extends State<MainPage> {
                   },
                 )
               : IconButton(
-                  icon: Icon(Icons.search),
+                  icon: Icon(
+                    Icons.search,
+                    color: Color(0xfff54d27),
+                  ),
                   color: Colors.black,
                   onPressed: () {
                     setState(() {
