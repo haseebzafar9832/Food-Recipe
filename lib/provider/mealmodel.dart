@@ -1928,6 +1928,38 @@ class MealProvider with ChangeNotifier {
       isVegetarian: true,
       isLactoseFree: true,
     ),
+    Meal(
+      id: 'm4',
+      categories: [
+        'c8',
+      ],
+      title: 'Tomato Soup',
+      affordability: Affordability.Luxurious,
+      complexity: Complexity.Simple,
+      imageUrl:
+          'https://www.tasteofhome.com/wp-content/uploads/2018/07/The-Best-Ever-Tomato-Soup_EXPS_THSO18_222724_D03_06_5b.jpg?w=1200',
+      duration: 30,
+      ingredients: [
+        '1 pound boneless skinless chicken breasts (about 2 large breasts)',
+        '⅓ cup plain Greek yogurt',
+        '¼ cup olive oil',
+        '4 lemons',
+        '4-5 cloves garlic pressed or minced',
+        '2 tablespoons dried oregano',
+        '1 teaspoon kosher salt',
+        '½ teaspoon freshly ground black pepper',
+      ],
+      steps: [
+        'Place the chicken pieces in a freezer bag or a bowl and set aside.',
+        'Add the Greek yogurt and olive oil to a medium size bowl. Zest one of the lemons and add to the bowl. Juice that lemon into the bowl with the zest. Slice the other three lemons and set aside. Add the minced garlic, oregano, kosher salt and black pepper to the lemon juice and zest and stir. Pour half of the marinade into the freezer bag or the bowl with the chicken pieces and reserve the other half of the marinade for basting. Marinate the chicken for 30 minutes or up to 3 hours in the refrigerator',
+        'When ready to grill, prepare the grill by lightly oiling the grate with vegetable oil or cooking spray and set to medium high heat',
+        'Grill the chicken, basting with the reserved marinade and turning often so each side browns and has light grill marks, until cooked through, about 15-20 minutes or until the chicken juices run clear. During the last 5 minutes of cooking add the 3 sliced lemons to the grill, turning once or twice. Allow the chicken to rest for 5 minutes before slicing and serve with the grilled lemons. Refrigerate leftovers for up to 3 days',
+      ],
+      isGlutenFree: true,
+      isVegan: true,
+      isVegetarian: true,
+      isLactoseFree: true,
+    ),
   ];
   List<Meal> get item1 {
     return [..._items];
